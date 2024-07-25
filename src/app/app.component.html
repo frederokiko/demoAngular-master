@@ -1,0 +1,14 @@
+<app-header (onMenu)="menuOpen = $event"></app-header>
+<div class="main">
+    <app-menu *ngIf="menuOpen"></app-menu>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</div>
+<app-footer></app-footer>
+
+<p-confirmDialog />
+<p-toast />
+@if(loaderService.isLoading()) {
+    <app-loader></app-loader>
+}
